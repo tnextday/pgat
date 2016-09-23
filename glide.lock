@@ -11,7 +11,7 @@ imports:
 - name: github.com/howeyc/gopass
   version: 66487b23f2880ba32e185121d2cd51a338ea069a
 - name: github.com/jmoiron/sqlx
-  version: a7f971fe8ea891a1a74ddb40c623f5722e28e8a8
+  version: 05b81a7d5d38058e42148dc01f17daf4acba4640
   subpackages:
   - reflectx
 - name: github.com/lib/pq

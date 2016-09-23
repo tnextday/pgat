@@ -43,7 +43,7 @@ func pgMustNotAllowEscapeSequence(conn *DB) {
 	}
 }
 
-func pgSetVersion(db *DB) {
+func pgMustSetVersion(db *DB) {
 	err := db.
 		SQL("SHOW server_version_num").
 		QueryScalar(&db.Version)
@@ -56,10 +56,17 @@ func pgSetVersion(db *DB) {
 // NewDB instantiates a Connection for a given database/sql connection
 func NewDB(db *sql.DB, driverName string) *DB {
 	database := sqlx.NewDb(db, driverName)
+
+	// sqlx will error when the result of a query has columns which are
+	// not present in destination struct. This becomes problematic
+	// when queries use SELECT *.
+	if !dat.Strict {
+		database = database.Unsafe()
+	}
 	conn := &DB{DB: database, Queryable: &Queryable{database}}
 	if driverName == "postgres" {
 		pgMustNotAllowEscapeSequence(conn)
-		pgSetVersion(conn)
+		pgMustSetVersion(conn)
 		if dat.Strict {
 			conn.SQL("SET client_min_messages to 'DEBUG';")
 		}
@@ -87,6 +94,6 @@ func NewDBFromString(driver string, connectionString string) *DB {
 func NewDBFromSqlx(dbx *sqlx.DB) *DB {
 	conn := &DB{DB: dbx, Queryable: &Queryable{dbx}}
 	pgMustNotAllowEscapeSequence(conn)
-	pgSetVersion(conn)
+	pgMustSetVersion(conn)
 	return conn
 }
