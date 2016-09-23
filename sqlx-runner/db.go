@@ -15,6 +15,19 @@ type DB struct {
 	Version int64
 }
 
+// Loose returns a DB clone that can loosely populate a struct. sqlx refers
+// to loose as `Unsafe`, but what it means is error when a result of a query
+// has more columns than a destination struct. In loose mode ignore this error.
+func (db *DB) Loose() *DB {
+	unsafe := db.DB.Unsafe()
+
+	return &DB{
+		DB:        unsafe,
+		Queryable: &Queryable{unsafe},
+		Version:   db.Version,
+	}
+}
+
 var standardConformingStrings string
 
 // pgMustNotAllowEscapeSequence checks if Postgres treats backlashes
@@ -57,12 +70,6 @@ func pgMustSetVersion(db *DB) {
 func NewDB(db *sql.DB, driverName string) *DB {
 	database := sqlx.NewDb(db, driverName)
 
-	// sqlx will error when the result of a query has columns which are
-	// not present in destination struct. This becomes problematic
-	// when queries use SELECT *.
-	if !dat.Strict {
-		database = database.Unsafe()
-	}
 	conn := &DB{DB: database, Queryable: &Queryable{database}}
 	if driverName == "postgres" {
 		pgMustNotAllowEscapeSequence(conn)
