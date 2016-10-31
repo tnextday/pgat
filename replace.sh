@@ -1,3 +1,3 @@
-find . -name "*.go" -not -path "./node_modules/*" -print | xargs sed -i 's|"gopkg.in/mgutz/dat.v3"|"gopkg.in/mgutz/dat.v3/dat"|g'
+find . -name "*.go" -not -path "./node_modules/*" -print | xargs sed -i 's|"github.com/mgutz/dat"|"github.com/mgutz/dat/dat"|g'
 
 

@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"testing"
 
-	"gopkg.in/mgutz/dat.v3/postgres"
-	"gopkg.in/stretchr/testify.v1/assert"
+	"github.com/mgutz/dat/postgres"
+	"github.com/stretchr/testify/assert"
 )
 
 type varargs []interface{}

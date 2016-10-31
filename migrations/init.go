@@ -4,8 +4,8 @@ import (
 	"database/sql"
 	"time"
 
-	"gopkg.in/mgutz/dat.v3/dat"
-	"gopkg.in/mgutz/dat.v3/sqlx-runner"
+	"github.com/mgutz/dat/dat"
+	"github.com/mgutz/dat/sqlx-runner"
 )
 
 var _namespace dat.UnsafeString
