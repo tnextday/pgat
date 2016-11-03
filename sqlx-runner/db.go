@@ -15,6 +15,12 @@ type DB struct {
 	Version int64
 }
 
+// Close closes the DB releasing any open resources. Passthrough
+// to sql.DB.Close()
+func (db *DB) Close() error {
+	return db.DB.Close()
+}
+
 // Loose returns a DB clone that can loosely populate a struct. sqlx refers
 // to loose as `Unsafe`, but what it means is error when a result of a query
 // has more columns than a destination struct. In loose mode ignore this error.
