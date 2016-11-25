@@ -6,9 +6,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/mgutz/dat/common"
-	"github.com/mgutz/dat/dat"
-	"github.com/mgutz/dat/postgres"
+	"github.com/tnextday/pgat/common"
+	"github.com/tnextday/pgat/dat"
+	"github.com/tnextday/pgat/postgres"
 	"github.com/stretchr/testify/assert"
 )
 

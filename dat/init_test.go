@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/mgutz/dat/postgres"
+	"github.com/tnextday/pgat/postgres"
 	"github.com/stretchr/testify/assert"
 )
 

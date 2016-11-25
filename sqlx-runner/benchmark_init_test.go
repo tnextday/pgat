@@ -1,6 +1,6 @@
 package runner
 
-import "github.com/mgutz/dat/dat"
+import "github.com/tnextday/pgat/dat"
 
 func benchReset() {
 	var sql = `

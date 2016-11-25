@@ -13,7 +13,7 @@ import (
 
 	"github.com/mgutz/str"
 
-	"github.com/mgutz/dat/common"
+	"github.com/tnextday/pgat/common"
 )
 
 // NameMapping is the routine to use when mapping column names to struct properties

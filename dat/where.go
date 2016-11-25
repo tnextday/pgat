@@ -7,7 +7,7 @@ import (
 	"strings"
 
 	"github.com/pkg/errors"
-	"github.com/mgutz/dat/common"
+	"github.com/tnextday/pgat/common"
 )
 
 // Eq is a map column -> value pairs which must be matched in a query

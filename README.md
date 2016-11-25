@@ -1,6 +1,6 @@
 # dat
 
-[GoDoc](https://godoc.org/github.com/mgutz/dat)
+[GoDoc](https://godoc.org/github.com/tnextday/pgat)
 
 `dat` (Data Access Toolkit) is a fast, lightweight Postgres library for Go.
 
@@ -100,14 +100,14 @@
 
     -   ordinal placeholder logic is optimized to be nearly as fast as using `?`
     -   `dat` can interpolate queries locally resulting in performance increase
-        over plain database/sql and sqlx. [Benchmarks](https://github.com/mgutz/dat/wiki/Benchmarks)
+        over plain database/sql and sqlx. [Benchmarks](https://github.com/tnextday/pgat/wiki/Benchmarks)
 
 ## Getting Started
 
 Get it
 
 ```sh
-go get -u github.com/mgutz/dat/sqlx-runner
+go get -u github.com/tnextday/pgat/sqlx-runner
 ```
 
 Use it
@@ -117,8 +117,8 @@ import (
     "database/sql"
 
     _ "github.com/lib/pq"
-    "github.com/mgutz/dat"
-    "github.com/mgutz/dat/sqlx-runner"
+    "github.com/tnextday/pgat"
+    "github.com/tnextday/pgat/sqlx-runner"
 )
 
 // global database (pooling provided by SQL driver)
@@ -734,7 +734,7 @@ the database.
 
 ```go
 // key-value store (kvs) package
-import "github.com/mgutz/dat/kvs"
+import "github.com/tnextday/pgat/kvs"
 
 func init() {
     // Redis: namespace is the prefix for keys and should be unique
@@ -814,9 +814,9 @@ Interpolation provides
 *   May use safe SQL constants like `dat.NOW` and `dat.DEFAULT`
 *   Expand placeholders with slice values `$1 => (1, 2, 3)`
 
-Read [SQL Interpolation](https://github.com/mgutz/dat/wiki/Local-Interpolation) in wiki
+Read [SQL Interpolation](https://github.com/tnextday/pgat/wiki/Local-Interpolation) in wiki
 for more details and SQL injection.
 
 ## LICENSE
 
-[The MIT License (MIT)](https://github.com/mgutz/dat/blob/master/LICENSE)
+[The MIT License (MIT)](https://github.com/tnextday/pgat/blob/master/LICENSE)

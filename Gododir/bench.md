@@ -39,7 +39,7 @@ BenchmarkExecSQLSql2        5000        296267 ns/op         881 B/op         30
 BenchmarkExecSQLDat4        5000        222349 ns/op         800 B/op         21 allocs/op
 BenchmarkExecSQLSql4        5000        306460 ns/op         978 B/op         35 allocs/op
 ```
-ok      github.com/mgutz/dat/sqlx-runner    48.405s
+ok      github.com/tnextday/pgat/sqlx-runner    48.405s
 
 
 BenchmarkTransactedDat2            10000                             114017   ns/op  832     B/op  21  allocs/op
@@ -90,7 +90,7 @@ BenchmarkExecSQLSqx2               5000                              296452   ns
 BenchmarkExecSQLDat4               5000                              223017   ns/op  296     B/op  10  allocs/op
 BenchmarkExecSQLSql4               5000                              303522   ns/op  978     B/op  35  allocs/op
 BenchmarkExecSQLSqx4               5000                              304502   ns/op  978     B/op  35  allocs/op
-ok                                 github.com/mgutz/dat/sqlx-runner  72.733s
+ok                                 github.com/tnextday/pgat/sqlx-runner  72.733s
 bench 86233ms
 
 

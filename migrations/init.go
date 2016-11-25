@@ -4,8 +4,8 @@ import (
 	"database/sql"
 	"time"
 
-	"github.com/mgutz/dat/dat"
-	"github.com/mgutz/dat/sqlx-runner"
+	"github.com/tnextday/pgat/dat"
+	"github.com/tnextday/pgat/sqlx-runner"
 )
 
 var _namespace dat.UnsafeString

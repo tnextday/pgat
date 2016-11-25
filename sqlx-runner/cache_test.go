@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/mgutz/dat/dat"
+	"github.com/tnextday/pgat/dat"
 	"github.com/stretchr/testify/assert"
 
 	"github.com/mgutz/jo"

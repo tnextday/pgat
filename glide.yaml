@@ -1,4 +1,4 @@
-package: github.com/mgutz/dat
+package: github.com/tnextday/pgat
 import:
 - package: github.com/cenkalti/backoff
   version: v1.0.0

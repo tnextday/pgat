@@ -3,7 +3,7 @@ package runner
 import (
 	"testing"
 
-	"github.com/mgutz/dat/dat"
+	"github.com/tnextday/pgat/dat"
 )
 
 // These benchmarks compare the time to excute an interpolated SQL

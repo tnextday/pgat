@@ -1,6 +1,6 @@
 package main
 
-import "github.com/mgutz/dat/sqlx-runner"
+import "github.com/tnextday/pgat/sqlx-runner"
 
 // superDB is the connection to the superuser database
 var superDB runner.DB

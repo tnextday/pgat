@@ -5,7 +5,7 @@ import (
 	"log"
 
 	"github.com/jmoiron/sqlx"
-	"github.com/mgutz/dat/dat"
+	"github.com/tnextday/pgat/dat"
 )
 
 // DB represents an abstract database connection pool.

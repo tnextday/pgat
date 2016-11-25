@@ -4,7 +4,7 @@
 
 Changed
 
-*   `dat` package name changed from `gopkg.in/mgutz/dat.v1` to `github.com/mgutz/dat/dat`
+*   `dat` package name changed from `gopkg.in/mgutz/dat.v1` to `github.com/tnextday/pgat/dat`
 *   `ToSQL() (sql, []interface{})` => `ToSQL() (sql, []interface{}, error)`
 *   favor `github.com/pkg/errors` instead of `errors` package
 
@@ -43,8 +43,8 @@ Added
 
 ## v1.1.0
 
-*   [Caching](https://github.com/mgutz/dat#caching) - caching with Redis or (in-memory for testing)
-*   [LogQueriesThreshold](https://github.com/mgutz/dat#tracing-sql) - log slow queries
+*   [Caching](https://github.com/tnextday/pgat#caching) - caching with Redis or (in-memory for testing)
+*   [LogQueriesThreshold](https://github.com/tnextday/pgat#tracing-sql) - log slow queries
 *   dat.Null* creators
 *   fix resource cleanup
 *   fix duplicate error logging

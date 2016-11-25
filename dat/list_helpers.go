@@ -1,7 +1,7 @@
 package dat
 
 import (
-	"github.com/mgutz/dat/common"
+	"github.com/tnextday/pgat/common"
 )
 
 var bufPool = common.NewBufferPool()

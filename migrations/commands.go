@@ -5,8 +5,8 @@ import (
 	"os/exec"
 	"strconv"
 
-	"github.com/mgutz/dat/dat"
-	runner "github.com/mgutz/dat/sqlx-runner"
+	"github.com/tnextday/pgat/dat"
+	runner "github.com/tnextday/pgat/sqlx-runner"
 )
 
 // Migration is an entry in the migrations table.
