@@ -8,7 +8,7 @@ import (
 	"github.com/pkg/errors"
 
 	"github.com/jmoiron/sqlx"
-	"gopkg.in/mgutz/dat.v3/dat"
+	"github.com/mgutz/dat/dat"
 )
 
 // Queryable is an object that can be queried.

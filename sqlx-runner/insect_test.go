@@ -3,8 +3,8 @@ package runner
 import (
 	"testing"
 
-	"gopkg.in/mgutz/dat.v3/dat"
-	"gopkg.in/stretchr/testify.v1/assert"
+	"github.com/mgutz/dat/dat"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestInsect(t *testing.T) {

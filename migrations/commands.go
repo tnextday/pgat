@@ -5,8 +5,8 @@ import (
 	"os/exec"
 	"strconv"
 
-	"gopkg.in/mgutz/dat.v3/dat"
-	runner "gopkg.in/mgutz/dat.v3/sqlx-runner"
+	"github.com/mgutz/dat/dat"
+	runner "github.com/mgutz/dat/sqlx-runner"
 )
 
 // Migration is an entry in the migrations table.

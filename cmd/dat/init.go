@@ -1,6 +1,6 @@
 package main
 
-import "gopkg.in/mgutz/dat.v3/sqlx-runner"
+import "github.com/mgutz/dat/sqlx-runner"
 
 // superDB is the connection to the superuser database
 var superDB runner.DB

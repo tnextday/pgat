@@ -5,7 +5,7 @@ import (
 	"log"
 
 	"github.com/jmoiron/sqlx"
-	"gopkg.in/mgutz/dat.v3/dat"
+	"github.com/mgutz/dat/dat"
 )
 
 // DB represents an abstract database connection pool.
@@ -13,6 +13,25 @@ type DB struct {
 	DB *sqlx.DB
 	*Queryable
 	Version int64
+}
+
+// Close closes the DB releasing any open resources. Passthrough
+// to sql.DB.Close()
+func (db *DB) Close() error {
+	return db.DB.Close()
+}
+
+// Loose returns a DB clone that can loosely populate a struct. sqlx refers
+// to loose as `Unsafe`, but what it means is error when a result of a query
+// has more columns than a destination struct. In loose mode ignore this error.
+func (db *DB) Loose() *DB {
+	unsafe := db.DB.Unsafe()
+
+	return &DB{
+		DB:        unsafe,
+		Queryable: &Queryable{unsafe},
+		Version:   db.Version,
+	}
 }
 
 var standardConformingStrings string
@@ -43,7 +62,7 @@ func pgMustNotAllowEscapeSequence(conn *DB) {
 	}
 }
 
-func pgSetVersion(db *DB) {
+func pgMustSetVersion(db *DB) {
 	err := db.
 		SQL("SHOW server_version_num").
 		QueryScalar(&db.Version)
@@ -56,10 +75,11 @@ func pgSetVersion(db *DB) {
 // NewDB instantiates a Connection for a given database/sql connection
 func NewDB(db *sql.DB, driverName string) *DB {
 	database := sqlx.NewDb(db, driverName)
+
 	conn := &DB{DB: database, Queryable: &Queryable{database}}
 	if driverName == "postgres" {
 		pgMustNotAllowEscapeSequence(conn)
-		pgSetVersion(conn)
+		pgMustSetVersion(conn)
 		if dat.Strict {
 			conn.SQL("SET client_min_messages to 'DEBUG';")
 		}
@@ -87,6 +107,6 @@ func NewDBFromString(driver string, connectionString string) *DB {
 func NewDBFromSqlx(dbx *sqlx.DB) *DB {
 	conn := &DB{DB: dbx, Queryable: &Queryable{dbx}}
 	pgMustNotAllowEscapeSequence(conn)
-	pgSetVersion(conn)
+	pgMustSetVersion(conn)
 	return conn
 }
