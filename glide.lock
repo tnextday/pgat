@@ -1,5 +1,5 @@
 hash: 001a0ff22fa078c7802a277a2213965d22236f26c3f570fc497c26e8fc29ca86
-updated: 2016-11-25T23:42:08.970583478+08:00
+updated: 2016-12-02T15:06:09.107171351+08:00
 imports:
 - name: github.com/cenkalti/backoff
   version: 32cd0c5b3aef12c76ed64aaf678f6c79736be7dc
@@ -11,11 +11,11 @@ imports:
 - name: github.com/howeyc/gopass
   version: f5387c492211eb133053880d23dfae62aa14123d
 - name: github.com/jmoiron/sqlx
-  version: f71d5ee01769df469d115332106ef504ded071dc
+  version: 43975e693e7ab5df0ba436482a697b7c2bf6a87e
   subpackages:
   - reflectx
 - name: github.com/lib/pq
-  version: d8eeeb8bae8896dd8e1b7e514ab0d396c4f12a1b
+  version: 4a82388ebc5138c8289fe9bc602cb0b3e32cd617
   subpackages:
   - oid
 - name: github.com/mattn/go-colorable
@@ -45,11 +45,11 @@ imports:
 - name: github.com/satori/go.uuid
   version: 879c5887cd475cd7864858769793b2ceb0d44feb
 - name: golang.org/x/crypto
-  version: ede567c8e044a5913dad1d1af3696d9da953104c
+  version: 8a549a1948fc5271eb24f36dcb0d3b47dec75a16
   subpackages:
   - ssh/terminal
 - name: golang.org/x/sys
-  version: 30237cf4eefd639b184d1f2cb77a581ea0be8947
+  version: d5645953809d8b4752afb2c3224b1f1ad73dfa70
   subpackages:
   - unix
 - name: gopkg.in/godo.v2
